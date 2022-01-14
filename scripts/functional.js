@@ -28,7 +28,7 @@ $(() => {
     const position = [];
     let top = Math.floor(Math.random() * $('#stage').height());
     let left = Math.floor(Math.random() * $('#stage').width());
-    position.push(top, left);
+    position.push(`${top}px`, `${left}px`);
     return position;
     // measured as the distance in pixels from its top-left corner.
     // Then use it every time you want to place a new dancer on stage.
