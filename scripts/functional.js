@@ -1,7 +1,5 @@
-
 $(() => {
-
-  function Dancer (top, left) {
+  function Dancer(top, left) {
     const dancer = {};
     // Here we use jQuery to create an HTML <div> tag.
     dancer.$node = $('<div class="dancer"></div>');
@@ -17,19 +15,24 @@ $(() => {
   dancerMethods.setPosition = function (top, left) {
     // Here we use the CSS top and left properties to position our dancer
     // where it belongs on the page. See http://api.jquery.com/css/
-    this.$node.css({top, left});
+    this.$node.css({ top, left });
   };
 
   // Have a look at the last function in this file and figure out how to
   // make the regular dancers appear on stage. Then come back here
   // and continue with the TapDancer constructor.
 
-  function randomStagePosition () {
+  function randomStagePosition() {
     // Implement this function so that it returns an array with
     // the height and width coordinates of a random point on stage,
+    const position = [];
+    let top = Math.floor(Math.random() * $('#stage').height());
+    let left = Math.floor(Math.random() * $('#stage').width());
+    position.push(top, left);
+    return position;
     // measured as the distance in pixels from its top-left corner.
     // Then use it every time you want to place a new dancer on stage.
-
   }
 
+  console.log(randomStagePosition());
 });
