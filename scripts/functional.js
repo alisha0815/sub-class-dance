@@ -22,17 +22,35 @@ $(() => {
   // make the regular dancers appear on stage. Then come back here
   // and continue with the TapDancer constructor.
 
+  // add regular dancer subclass
+
   function randomStagePosition() {
     // Implement this function so that it returns an array with
     // the height and width coordinates of a random point on stage,
     const position = [];
-    let top = Math.floor(Math.random() * $('#stage').height());
-    let left = Math.floor(Math.random() * $('#stage').width());
-    position.push(`${top}px`, `${left}px`);
+    let topCoor = Math.floor(Math.random() * $('#stage').height());
+    let leftCoor = Math.floor(Math.random() * $('#stage').width());
+    position.push(topCoor, leftCoor);
     return position;
     // measured as the distance in pixels from its top-left corner.
     // Then use it every time you want to place a new dancer on stage.
   }
+
+  console.log(...randomStagePosition());
+  // Add regular dancer
+  function AddRegularDancer() {
+    const regularDancer = Dancer(
+      randomStagePosition()[0],
+      randomStagePosition()[1]
+    );
+    $('#stage').append(regularDancer.$node);
+    console.log(regularDancer);
+    return regularDancer;
+  }
+
+  console.log(AddRegularDancer());
+  // event handler--regular dancer
+  $('#regular').on('click', AddRegularDancer);
 
   console.log(randomStagePosition());
 });
