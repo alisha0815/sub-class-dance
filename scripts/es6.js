@@ -21,13 +21,6 @@ $(() => {
     return pos;
   };
 
-  // sub-classes
-
-  // regular dancer instace
-
-  // tapper
-  // rainbow dancer
-
   // regular handler
   const handlerRegular = () => {
     [topCoor, leftCoor] = randomStagePosition();
@@ -45,9 +38,20 @@ $(() => {
     tapperDancer.setPosition(topCoor, leftCoor);
   };
 
+  // rainbow handler
+  const handlerRainbow = () => {
+    [topCoor, leftCoor] = randomStagePosition();
+    const rainbowDancer = new Dancer(topCoor, leftCoor);
+    rainbowDancer.$node.addClass('rainbow');
+    $('#stage').append(rainbowDancer.$node);
+    rainbowDancer.setPosition(topCoor, leftCoor);
+  };
+
   // event-handler
   // regular
   $('#regular').click(handlerRegular);
   // tapper
   $('#tapper').click(handlerTapper);
+  // rainbow
+  $('#rainbow').click(handlerRainbow);
 });
