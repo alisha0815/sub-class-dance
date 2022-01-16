@@ -1,4 +1,3 @@
-
 body {
   background-color: #333;
   display: flex;
@@ -43,4 +42,35 @@ header {
   height: 15px;
   position: absolute;
   width: 15px;
+}
+
+/* blinking effect for tapper */
+.tapper {
+  animation: blink-animation 1s linear infinite;
+}
+
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* rainbow effect for rainbow dancer */
+.rainbow {
+  animation: rainbow-animation 1s linear infinite;
+}
+
+@keyframes rainbow-animation {
+  0% {
+    background-color: red;
+  }
+  25% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: green;
+  }
 }

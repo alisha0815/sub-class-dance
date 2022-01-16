@@ -36,21 +36,46 @@ $(() => {
     // Then use it every time you want to place a new dancer on stage.
   }
 
-  console.log(...randomStagePosition());
-  // Add regular dancer
+  // Function for dancers
+  // Regular Dancer
   function AddRegularDancer() {
-    const regularDancer = Dancer(
-      randomStagePosition()[0],
-      randomStagePosition()[1]
-    );
+    // create regularDancer
+    const regularDancer = Dancer(...randomStagePosition());
     $('#stage').append(regularDancer.$node);
-    console.log(regularDancer);
     return regularDancer;
   }
 
-  console.log(AddRegularDancer());
-  // event handler--regular dancer
+  // Tapper Dancer
+  function AddTapper() {
+    const tapperDancer = Dancer(...randomStagePosition());
+    tapperDancer.$node.addClass('tapper');
+    $('#stage').append(tapperDancer.$node);
+    return tapperDancer;
+  }
+
+  // var i = 0;
+  // function change() {
+  //   var doc = document.getElementById('background');
+  //   var color = ['black', 'blue', 'brown', 'green'];
+  //   doc.style.backgroundColor = color[i];
+  //   i = (i + 1) % color.length;
+  // }
+  setInterval(change, 1000);
+  // Rainbow Dancer
+  function AddRainbow() {
+    const rainbowDancer = Dancer(...randomStagePosition());
+    rainbowDancer.$node.addClass('rainbow');
+    $('#stage').append(rainbowDancer.$node);
+    return rainbowDancer;
+  }
+
+  // Event handler
+  // regular dancer
   $('#regular').on('click', AddRegularDancer);
+  // tapper dancer
+  $('#tapper').on('click', AddTapper);
+  // rainbow dancer
+  $('#rainbow').on('click', AddRainbow);
 
   console.log(randomStagePosition());
 });
