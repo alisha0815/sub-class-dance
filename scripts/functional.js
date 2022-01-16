@@ -73,11 +73,11 @@ $(() => {
 
   // Event handler
   // regular dancer
-  $('#regular').on('click', AddRegularDancer);
+  $('#regular').click(AddRegularDancer);
   // tapper dancer
-  $('#tapper').on('click', AddTapper);
+  $('#tapper').click(AddTapper);
   // rainbow dancer
-  $('#rainbow').on('click', AddRainbow);
+  $('#rainbow').click(AddRainbow);
 
   console.log(randomStagePosition());
 });
