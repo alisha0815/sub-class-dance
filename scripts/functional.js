@@ -1,3 +1,5 @@
+'use-strict';
+
 $(() => {
   function Dancer(top, left) {
     const dancer = {};
@@ -60,7 +62,7 @@ $(() => {
   //   doc.style.backgroundColor = color[i];
   //   i = (i + 1) % color.length;
   // }
-  setInterval(change, 1000);
+  // setInterval(change, 1000);
   // Rainbow Dancer
   function AddRainbow() {
     const rainbowDancer = Dancer(...randomStagePosition());
